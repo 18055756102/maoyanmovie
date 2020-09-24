@@ -33,7 +33,7 @@ export default {
   data() {
     return {};
   },
-  filters: {
+  filters: {   
     format(value) {
       return value.replace("/w.h", "");
     }
