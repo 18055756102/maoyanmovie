@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        这是影院页面
+        这是详情页面
     </div>
 </template>
 
