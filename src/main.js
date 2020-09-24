@@ -16,7 +16,7 @@ import "amfe-flexible"
 Vue.config.productionTip = false;
 
 new Vue({
-    router,
+    router: router,
     // store,
     render: h => h(App)
 }).$mount("#app");

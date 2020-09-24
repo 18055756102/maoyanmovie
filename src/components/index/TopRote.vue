@@ -32,6 +32,7 @@ export default {
           let bs = new BScroll('.ul-wrap', {
              //允许纵向滚动
            scrollX:true,
+           scrollY:false,
            click:true
         })
       }

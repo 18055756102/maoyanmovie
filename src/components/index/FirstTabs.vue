@@ -39,8 +39,12 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/style/var.scss";
     .first-tabs {
+        position: fixed;
+        width: 100%;
+        top: 108px;
         height: 46px;
         width: 100%;
+        z-index: 11;
         border: 1px solid $border-color;
         display: flex;
         justify-content: space-around;
