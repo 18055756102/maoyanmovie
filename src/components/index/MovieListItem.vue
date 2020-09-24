@@ -1,5 +1,5 @@
 <template>
-  <li class="movie-list-item">
+  <li class="movie-list-item" >
     <div class="box-left">
       <img :src="item.img | format" alt />
     </div>
@@ -45,6 +45,7 @@ export default {
   width: 100%;
   height: 114px;
   padding-left: 15px;
+  position: relative;
   .box-left {
     width: 64px;
     height: 90px;
@@ -130,5 +131,14 @@ export default {
       background-color:#3c9fe6;
     }
   }
+}
+.movie-list-item::after {
+  content: "";
+  width: 76%;
+  height: 2px;
+  background: #f5f5f5;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 </style>

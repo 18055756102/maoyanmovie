@@ -29,27 +29,27 @@ export default {
             list:[
                 {
                     title:'电影/影院',
-                    icon:'icon-fangdajing',
+                    icon:'icon-dianying',
                     url:'/index'
                 },
                 {
                     title:'视频',
-                    icon:'icon-fangdajing',
+                    icon:'icon-shipin',
                     url:'/video'
                 },
                 {
                     title:'小视频',
-                  icon:'icon-fangdajing',
+                  icon:'icon-xiaoshipin',
                   url:'/mini-video'
                 },
                 {
                     title:'演出',
-                    icon:'icon-fangdajing',
+                    icon:'icon-xiaoshipin',
                     url:'/show'
                 },
                 {
                     title:'我的',
-                    icon:'icon-fangdajing',
+                    icon:'icon-wode',
                     url:'/mine'
                 },
             ]

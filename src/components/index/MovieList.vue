@@ -1,6 +1,6 @@
 <template>
     <ul class="movie-list">
-       <movie-list-item v-for="(item,index) in movieList" :key="index" :item="item"></movie-list-item>
+       <movie-list-item v-for="(item,index) in movieList" :key="index" :item="item" ></movie-list-item>
        <p v-if='total' v-cloak>人家是有底线的</p>
     </ul>
 </template>

@@ -7,8 +7,8 @@
         v-for="(item,index) in tabslist" :key="index"
         :class="{ active: activeIndex === index }"
         
-        @click="tabsChange(index)">
-        {{item}}
+        @click="tabsChange(index,item.url)">
+        {{item.title}}
         <div class="underline" v-if="activeIndex === index"> </div>
         </li>
       </ul>
@@ -20,7 +20,24 @@
 export default {
     data(){
         return{
-            tabslist:["热映","影院","待映","经典电影"],
+            tabslist:[//路径跳转  进行路由转换
+                {
+                    title:'热映',
+                    url:'/hot'
+                },
+                   {
+                    title:'影院',
+                    url:'/cinema'
+                },
+                   {
+                    title:'待映',
+                    url:'/wait'
+                },
+                   {
+                    title:'经典电影',
+                    url:'/classic'
+                },
+            ],
             activeIndex: 0
         }
     },
@@ -29,8 +46,9 @@ export default {
     computed:{},
     mounted(){},
     methods:{
-        tabsChange(i){
-            this.activeIndex=i
+        tabsChange(i,url){
+            this.activeIndex=i;
+            this.$router.push(url)//这是vue router自带的函数  用来传递路径  可视性路由转换
         }
     }
 };

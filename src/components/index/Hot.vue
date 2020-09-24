@@ -1,7 +1,9 @@
 <template>
-    <div>
-         <div class="wrapper">
-       <!-- <first-tabs></first-tabs> -->
+
+<!-- 这是热映 -->
+
+<div class="wrapper">
+    <div> 
         <top-rote :topRotedList="topRotedList  "></top-rote>
         <movie-list :movieList="movieList" :total="total"></movie-list> 
          </div>
@@ -41,8 +43,6 @@ export default {
   mounted(){
       this.getTopRoteList()
       this.getList()
-    //加载数据是异步操作  所以应该先加载数据完成之后  再加入bs
-    //实例化    第一个参数时父元素  第二个参数 1对象 里面放配置
     
   },
   methods:{
@@ -104,10 +104,7 @@ export default {
            bs.finishPullUp()//表示这次上拉结束  可以开始下一次
            
           }
-          
         })
-    
-         
     }
   },
 }

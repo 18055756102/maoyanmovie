@@ -4,7 +4,11 @@
       <p> 最受好评的电影</p>
       <div class="ul-wrap">
          <ul >
-         <li v-for="item in topRotedList" :key="item.id">
+         <li 
+         v-for="item in topRotedList" 
+         :key="item.id"
+         @click="toDetail(item.id)"
+         >
             <div class="img-wrap">
                <img :src="item.img" alt="">
                <h5>{{item.title}}</h5>
@@ -41,6 +45,9 @@ export default {
       //  this.getTopRoteList()
    },
    methods:{
+      toDetail(id){
+         this.$router.push('detail/'+id)
+      }
    //  async getTopRoteList(){
    //       //使用fetch请求 
    //    // fetch('http://www.pudge.wang:3002/api/home/topRatedMovies')

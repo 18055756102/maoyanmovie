@@ -2,6 +2,12 @@ import Vue from "vue";
 //引入vue-router
 import VueRouter from 'vue-router';
 
+// 去除重复点击时的警告
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(VueRouter);
 
 //注册路由
@@ -16,11 +22,30 @@ const routes = [{
             import ('../views/Index.vue'),
         //嵌套子路由 
         children: [{
-            path: '/hot',
-            component: () =>
-                import ('../components/index/Hot.vue')
-        }]
-
+                path: '/index',
+                redirect: '/hot'
+            },
+            {
+                path: '/hot',
+                component: () =>
+                    import ('../components/index/Hot.vue')
+            },
+            {
+                path: '/cinema',
+                component: () =>
+                    import ('../components/index/Cinema.vue')
+            },
+            {
+                path: '/wait',
+                component: () =>
+                    import ('../components/index/Wait.vue')
+            },
+            {
+                path: '/classic',
+                component: () =>
+                    import ('../components/index/Classic.vue')
+            }
+        ]
     },
     {
         path: '/video',
@@ -47,10 +72,17 @@ const routes = [{
 
     },
     {
+        path: '/detail/:id',
+        name: 'detail',
+        component: () =>
+            import ('../views/Detail.vue')
+    },
+    {
         path: '*',
         component: () =>
-            import ('../views/NotFound')
-    }
+            import ('../views/NotFound.vue')
+    },
+
 ]
 
 //设置实例化

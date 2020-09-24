@@ -52,5 +52,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```
     上拉加载    pullingUp 事件    数据加载是异步操作  获取到数据后还要判断是否数量对上    
 ```
-### routerlink标签  用来引入   
+### routerlink标签  用来引入      创建的是a标签 
 ### routerview标签  用来创建出口 
