@@ -21,13 +21,7 @@ export default {
             count:0
         }
     },
-    // watch:{
-    //     movieList(){
-    //         this.$nextTick(()=>{
-    //             this.$emit('listChange',this.count++)
-    //         })
-    //     }
-    // },
+   
     components:{
         MovieListItem
     },
@@ -62,9 +56,7 @@ export default {
      width: 100%;
      margin-top: 12px;
      background: #fff;
-    //  display: flex;
-    //  justify-content: center;
-    //  align-items: center;
+    
     [v-cloak] {
         display: none;
     }

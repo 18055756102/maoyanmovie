@@ -1,4 +1,4 @@
-te<template>
+<template>
     <div class="wrapper">
         这是待映页面
     </div>

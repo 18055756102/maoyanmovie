@@ -46,7 +46,8 @@ export default {
    },
    methods:{
       toDetail(id){
-         this.$router.push('/detail/'+id)
+      //   console.log(id) 
+        this.$router.push('/detail/'+id)
       }
    //  async getTopRoteList(){
    //       //使用fetch请求 

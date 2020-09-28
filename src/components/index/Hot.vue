@@ -24,9 +24,8 @@ export default {
      components:{
       TopRote,
       MovieList,
-    //   AppItem,
-    //   BottomItem
-    },
+    
+    },  
     data(){
       return{
         topRotedList:[],
@@ -47,15 +46,6 @@ export default {
   },
   methods:{
     //子组件侦听器侦测到数据改变  通过子组件向父组件传递信息
-    change(val){
-      // bs.finishPullUp()
-      if(val !== 0){
-        bs.refresh()//每次滑动后重新计算滚动距离
-        bs.finishPullUp()
-      }
-      // console.log('val',val)
-    },
-
       //上拉加载函数  加载更多的数据
         async pullUpLoad(){
           const ids=this.movieIds.slice(this.index,this.index+10);
@@ -66,7 +56,7 @@ export default {
           this.index+=10
           this.movieList=this.movieList.concat(res.result)
         },
-
+     
 
       async getTopRoteList(){
         const res=await getTopRated()
@@ -95,6 +85,7 @@ export default {
           //允许上拉加载
           pullUpLoad: true
           })
+
           bs.on('pullingUp',async()=>{//请求数据  更新数据列表
 
           //判断当前长度   是否已经拉到最后了   跟一开始返回的toutal总长度比较

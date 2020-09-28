@@ -73,7 +73,5 @@ export default {
                 top: 17px;
                 border-radius: 3px;
              }
-            
-
 }
 </style>

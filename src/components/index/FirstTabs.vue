@@ -1,7 +1,7 @@
 <template>
 <!-- 地区 电影选择 -->
     <nav class="first-tabs">
-      <address>北京^</address>
+      <address @click="toCities"> {{city}}^</address>
       <ul>
         <li 
         v-for="(item,index) in tabslist" :key="index"
@@ -38,16 +38,25 @@ export default {
                     url:'/classic'
                 },
             ],
-            activeIndex: 0
+            // activeIndex: +sessionStorage.getItem('activeIndex')||0
+            activeIndex:0
         }
     },
 
     components:{},
-    computed:{},
+    computed:{
+        city(){
+            return this.$store.state.city.name
+        }
+    },
     mounted(){},
     methods:{
+        toCities(){
+            this.$router.push('/cities')
+        } ,
         tabsChange(i,url){
             this.activeIndex=i;
+            // sessionStorage.serItem('activeIndex',i)//这是防止左右点击不同页面刷新后  对应红线位置部队问题
             this.$router.push(url)//这是vue router自带的函数  用来传递路径  可视性路由转换
         }
     }
@@ -57,9 +66,8 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/style/var.scss";
     .first-tabs {
-        position: fixed;
-        width: 100%;
-        top: 108px;
+        position: sticky;
+        top: 52px;
         height: 46px;
         width: 100%;
         z-index: 11;
@@ -68,7 +76,7 @@ export default {
         justify-content: space-around;
         align-items: center;
         font-size: 15px;
-         background: white;
+        background: white;
         address{
             color: #666666;
         }
